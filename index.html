@@ -6,6 +6,20 @@
     <title>Image Slideshow</title>
 </head>
 <body>
+    <div class="slideshow-container">
+        <div class="slides">
+            <img src="menu-item1.png" alt="Slide 1">
+            <img src="menu-item2.png" alt="Slide 2">
+            <img src="menu-item3.png" alt="Slide 3">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
     
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
 </body>
 </html>
