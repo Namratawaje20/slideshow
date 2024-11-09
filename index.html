@@ -21,5 +21,45 @@
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
     </div>
+    script>
+    let currentIndex = 1;
+
+    function showSlides() {
+        let slides = document.querySelectorAll('.slides img');
+        let dots = document.querySelectorAll('.dot');
+        
+        if (currentIndex > slides.length) {
+            currentIndex = 1;
+        }
+        
+        if (currentIndex < 1) {
+            currentIndex = slides.length;
+        }
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        for (let j = 0; j < dots.length; j++) {
+            dots[j].classList.remove("active");
+        }
+
+        slides[currentIndex - 1].style.display = "block";
+        dots[currentIndex - 1].classList.add("active");
+    }
+
+    function changeSlide(n) {
+        currentIndex += n;
+        showSlides();
+    }
+
+    function currentSlide(n) {
+        currentIndex = n;
+        showSlides();
+    }
+
+    showSlides(); // Initialize the slideshow
+</script>
+
 </body>
 </html>
